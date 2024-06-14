@@ -8,6 +8,9 @@ module.exports = {
     allowedPostUpgradeCommands: ["^do-something$"],
     prHourlyLimit: 3,
     postUpgradeTasks: [
-        "do-something"
+        {
+            "command": "do-something",
+            "executionMode": "branch",
+        }
     ]
 }
