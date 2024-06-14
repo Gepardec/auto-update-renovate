@@ -6,7 +6,7 @@ module.exports = {
     ],
     "baseBranches": ["main"],
     allowedPostUpgradeCommands: ["^do-something$"],
-    prHourlyLimit: 3,
+    prHourlyLimit: 70,
     postUpgradeTasks: [
         {
             "command": "do-something",
