@@ -7,8 +7,5 @@ module.exports = {
     baseBranches: ["main"],
     allowedPostUpgradeCommands: ["ls"],
     prHourlyLimit: 70,
-    postUpgradeTasks: {
-        commands: ["ls -l"]
-    },
     recreateWhen: "always"
 }
