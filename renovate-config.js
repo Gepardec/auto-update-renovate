@@ -5,7 +5,7 @@ module.exports = {
         "Ruhsi/gepardec-default-quarkus"
     ],
     baseBranches: ["main"],
-    allowedPostUpgradeCommands: ["ls"],
+    allowedPostUpgradeCommands: ["tslint --fix"],
     prHourlyLimit: 70,
     recreateWhen: "always"
 }
