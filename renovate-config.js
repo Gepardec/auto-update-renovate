@@ -4,8 +4,11 @@ module.exports = {
     repositories: [
         "Ruhsi/gepardec-default-quarkus"
     ],
-    baseBranches: ["main"],
-    allowedPostUpgradeCommands: ["tslint --fix"],
-    prHourlyLimit: 70,
-    recreateWhen: "always"
+    prHourlyLimit: 0,
+    postUpgradeTasks: {
+        commands: ["ls -l"],
+        fileFilters: ["**/*.txt"],
+        executionMode: "branch"
+    },
+    allowedPostUpgradeCommands: ["touch", "ls"]
 }
