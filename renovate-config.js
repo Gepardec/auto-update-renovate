@@ -12,5 +12,6 @@ module.exports = {
             "command": "do-something",
             "executionMode": "branch",
         }
-    ]
+    ],
+    recreateWhen: "always"
 }
