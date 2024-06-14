@@ -8,7 +8,7 @@ module.exports = {
     allowedPostUpgradeCommands: ["ls"],
     prHourlyLimit: 70,
     postUpgradeTasks: {
-        "commands": ["ls -l"]
+        commands: ["ls -l"]
     },
     recreateWhen: "always"
 }
