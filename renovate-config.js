@@ -4,5 +4,10 @@ module.exports = {
     repositories: [
         "Ruhsi/gepardec-default-quarkus"
     ],
-    "baseBranches": ["main"]
+    "baseBranches": ["main"],
+    allowedPostUpgradeCommands: ["^do-something$"],
+    prHourlyLimit: 3,
+    postUpgradeTasks: [
+        "do-something"
+    ]
 }
