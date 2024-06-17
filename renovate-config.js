@@ -7,18 +7,10 @@ module.exports = {
     prHourlyLimit: 0,
     postUpgradeTasks: {
         commands: ["ls -l"],
-        fileFilters: ["**/*", "**/.*"],
-        executionMode: "update"
+        fileFilters: ["**/*.txt"],
+        executionMode: "branch"
     },
-    repositoryCache: true,
-    ignorePrAuthor: false,
-    onboarding: false,
-    requireConfig: true,
-    optimizeForDisabled: true,
-    allowPostUpgradeCommandTemplating: true,
     recreateWhen: "always",
     allowScripts: true,
-    allowedPostUpgradeCommands: [
-        "ls -l"
-    ],
-};
+    allowedPostUpgradeCommands: ["touch", "ls", "ls -l"]
+}
