@@ -8,9 +8,9 @@ module.exports = {
     postUpgradeTasks: {
         commands: ["ls -l"],
         fileFilters: ["**/*.txt"],
-        executionMode: "branch"
+        executionMode: "update"
     },
     recreateWhen: "always",
     allowScripts: true,
-    allowedPostUpgradeCommands: ["touch", "ls", "ls -l"]
+    allowedPostUpgradeCommands: ["ls -l"]
 }
