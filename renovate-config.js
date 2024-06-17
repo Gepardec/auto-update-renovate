@@ -6,11 +6,11 @@ module.exports = {
     ],
     prHourlyLimit: 0,
     postUpgradeTasks: {
-        commands: ["ls -l"],
-        fileFilters: ["**/*.txt"],
+        commands: ["scripts/quarkus-update.sh"],
+        fileFilters: ["**/*.**"],
         executionMode: "branch"
     },
     recreateWhen: "always",
     allowScripts: true,
-    allowedPostUpgradeCommands: ["touch", "ls", "ls -l"]
+    allowedPostUpgradeCommands: ["quarkus-update.sh", ".*"],
 }
