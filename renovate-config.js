@@ -10,6 +10,6 @@ module.exports = {
     },
     recreateWhen: "always",
     allowScripts: true,
-    allowedPostUpgradeCommands: ["touch, ls, ls -l"],
+    allowedPostUpgradeCommands: ["touch", "ls", "ls -l"],
     cacheHardTtlMinutes: 1
 }
