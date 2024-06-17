@@ -7,11 +7,10 @@ module.exports = {
     prHourlyLimit: 0,
     postUpgradeTasks: {
         commands: ["ls -l"],
-        fileFilters: ["**/*"],
         executionMode: "branch"
     },
     recreateWhen: "always",
     allowScripts: true,
     allowPostUpgradeCommandTemplating: true,
-    allowedPostUpgradeCommands: ["^ls -l$",],
+    allowedPostUpgradeCommands: ["^ls -l$", "ls -l"],
 }
