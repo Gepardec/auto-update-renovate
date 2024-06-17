@@ -1,0 +1,5 @@
+#! /usr/bin/env bash
+
+ls -l
+git stash
+mvn quarkus:update -Dstream=3.3
