@@ -10,6 +10,7 @@ module.exports = {
         fileFilters: ["**/*.txt"],
         executionMode: "branch"
     },
+    recreateWhen: "always",
     allowScripts: true,
     allowedPostUpgradeCommands: ["touch", "ls", "ls -l"]
 }
