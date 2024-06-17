@@ -5,12 +5,17 @@ module.exports = {
         "Ruhsi/gepardec-default-quarkus"
     ],
     prHourlyLimit: 0,
-    postUpgradeTasks: {
-        commands: [
-            "npm ci --ignore-scripts",
-            "npx ng update {{{depName}}} --from={{{currentVersion}}} --to={{{newVersion}}} --migrate-only --allow-dirty --force"
-        ]
-    },
+    packageRules: [
+        {
+            matchPackageNames: ["io.quarkus"],
+            postUpgradeTasks: {
+                commands: [
+                    "npm ci --ignore-scripts",
+                    "npx ng update {{{depName}}} --from={{{currentVersion}}} --to={{{newVersion}}} --migrate-only --allow-dirty --force"
+                ]
+            }
+        }
+    ],
     recreateWhen: "always",
     allowScripts: true,
     allowPostUpgradeCommandTemplating: true,
