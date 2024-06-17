@@ -11,16 +11,14 @@ module.exports = {
         executionMode: "branch"
     },
     repositoryCache: true,
-    ignorePrAuthor: false, // default: false, set to true when migrating bot account
-    onboarding: false, // renovate.json files exist, so no onboarding MR is needed
-    requireConfig: true, // require a renovate.json or other valid renovate config be present
-    optimizeForDisabled: true, // first check in config if renovate is disabled
+    ignorePrAuthor: false,
+    onboarding: false,
+    requireConfig: true,
+    optimizeForDisabled: true,
     allowPostUpgradeCommandTemplating: true,
     recreateWhen: "always",
     allowScripts: true,
     allowedPostUpgradeCommands: [
-        // array of regex strings of allowed `postUpgradeTasks` commands.
-        "^quarkus-update$"
+        "^./scripts/quarkus-update$"  // Adjusted regex to match the full path
     ],
-
-}
+};
