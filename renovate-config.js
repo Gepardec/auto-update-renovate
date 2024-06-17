@@ -6,7 +6,7 @@ module.exports = {
     ],
     prHourlyLimit: 0,
     postUpgradeTasks: {
-        commands: ["quarkus-update", "./quarkus-update"],
+        commands: ["quarkus-update"],
         fileFilters: ["**/*", "**/.*"],
         executionMode: "update"
     },
@@ -20,7 +20,6 @@ module.exports = {
     allowScripts: true,
     allowedPostUpgradeCommands: [
         "^quarkus-update$",
-        "^\\./quarkus-update$",
         "^ls -l$"
     ],
 };
