@@ -27,12 +27,3 @@ jobs:
           configurationFile: renovate-config.js
         env:
           LOG_LEVEL: debug
-
-      - name: List files in repository
-        run: ls -laR
-
-      - name: Check script executability
-        run: ls -l ./quarkus-update
-
-      - name: Run script manually
-        run: ./quarkus-update
