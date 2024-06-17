@@ -20,6 +20,12 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Install Java 17 Temurin
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v40.1.12
         with:
