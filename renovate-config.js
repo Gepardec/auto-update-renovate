@@ -1,15 +1,25 @@
 module.exports = {
-    gitAuthor: "Renovate Bot <bot@renovateapp.com>",
-    platform: "github",
-    repositories: ["Ruhsi/gepardec-default-quarkus"],
+    gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
+    platform: 'github',
+    repositories: [
+        "Ruhsi/gepardec-default-quarkus"
+    ],
     prHourlyLimit: 0,
     postUpgradeTasks: {
-        commands: ["ls -l"],
-        fileFilters: ["**/*.txt"],
+        commands: ["quarkus-update", "ls -l"],
+        fileFilters: ["**/*", "**/.*"],
         executionMode: "branch"
     },
+    repositoryCache: true,
+    ignorePrAuthor: false,
+    onboarding: false,
+    requireConfig: true,
+    optimizeForDisabled: true,
+    allowPostUpgradeCommandTemplating: true,
     recreateWhen: "always",
     allowScripts: true,
-    allowedPostUpgradeCommands: ["touch", "ls", "ls -l"],
-    cacheHardTtlMinutes: 1
-}
+    allowedPostUpgradeCommands: [
+        "^quarkus-update$",
+        "^ls -l$"
+    ],
+};
