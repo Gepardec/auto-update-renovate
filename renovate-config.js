@@ -12,5 +12,5 @@ module.exports = {
     recreateWhen: "always",
     allowScripts: true,
     allowPostUpgradeCommandTemplating: true,
-    allowedPostUpgradeCommands: ["^ls -l$", "ls -l"],
+    allowedPostUpgradeCommands: ["^ls\s-l$"]
 }
