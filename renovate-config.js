@@ -20,6 +20,7 @@ module.exports = {
     allowScripts: true,
     allowedPostUpgradeCommands: [
         "^quarkus-update$",
+        "^./quarkus-update$",
         "^ls -l$"
     ],
 };
