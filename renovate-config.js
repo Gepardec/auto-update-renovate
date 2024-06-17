@@ -19,7 +19,6 @@ module.exports = {
     recreateWhen: "always",
     allowScripts: true,
     allowedPostUpgradeCommands: [
-        "^quarkus-update$",
         "^./quarkus-update$",
         "^ls -l$"
     ],
