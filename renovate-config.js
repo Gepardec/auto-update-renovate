@@ -6,7 +6,7 @@ module.exports = {
     ],
     prHourlyLimit: 0,
     postUpgradeTasks: {
-        commands: ["./scripts/quarkus-update"],
+        commands: ["quarkus-update", "./quarkus-update"],
         fileFilters: ["**/*", "**/.*"],
         executionMode: "branch"
     },
@@ -19,6 +19,6 @@ module.exports = {
     recreateWhen: "always",
     allowScripts: true,
     allowedPostUpgradeCommands: [
-        "^./scripts/quarkus-update$"  // Adjusted regex to match the full path
+        "^quarkus-update$"  // Adjusted regex to match the full path
     ],
 };
