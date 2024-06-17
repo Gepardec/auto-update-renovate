@@ -7,8 +7,8 @@ module.exports = {
     prHourlyLimit: 0,
     postUpgradeTasks: {
         commands: ["ls -l"],
-        fileFilters: ["**/*.txt"],
-        executionMode: "update"
+        fileFilters: ["**/*"],
+        executionMode: "branch"
     },
     recreateWhen: "always",
     allowScripts: true,
