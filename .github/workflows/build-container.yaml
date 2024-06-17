@@ -1,0 +1,23 @@
+name: Release Containerimage
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-test-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: checkout
+
+      # build the container image and release it as a package in this repository
+      - uses: mr-smithers-excellent/docker-build-push@v6
+        name: push-container-image
+        with:
+          image: gepardec-renovate
+          registry: ghcr.io
+          dockerfile: Containerfile
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          # if the branch is main, add the latest tag
+          addLatest: ${{ github.ref == 'refs/heads/main' }}
