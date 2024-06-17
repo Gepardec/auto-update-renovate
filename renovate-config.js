@@ -6,11 +6,13 @@ module.exports = {
     ],
     prHourlyLimit: 0,
     postUpgradeTasks: {
-        commands: ["ls -l"],
-        executionMode: "branch"
+        commands: [
+            "npm ci --ignore-scripts",
+            "npx ng update {{{depName}}} --from={{{currentVersion}}} --to={{{newVersion}}} --migrate-only --allow-dirty --force"
+        ]
     },
     recreateWhen: "always",
     allowScripts: true,
     allowPostUpgradeCommandTemplating: true,
-    allowedPostUpgradeCommands: ["^ls\s-l$"]
+    allowedPostUpgradeCommands: ['^npm ci --ignore-scripts$', '^npx ng update']
 }
