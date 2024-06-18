@@ -4,7 +4,15 @@ module.exports = {
     repositories: [
         "Ruhsi/gepardec-default-quarkus"
     ],
-    prHourlyLimit: 0,
+    extends: ["config:recommended", ":dependencyDashboard", ":dependencyDashboardApproval", ":prConcurrentLimitNone", ":prHourlyLimitNone", ":semanticCommits", ":timezone(Europe/Vienna)"],
+    packageRules: [
+        {
+            groupName: "quarkus",
+            matchPackagePrefixes: [
+                "io.quarkus"
+            ]
+        }
+    ],
     postUpgradeTasks: {
         commands: ["./quarkus-update {{branchName}} {{currentVersion}} {{newVersion}}"],
         fileFilters: ["**/*", "**/.*"],
