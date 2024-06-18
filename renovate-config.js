@@ -6,11 +6,7 @@ module.exports = {
     ],
     extends: [
         "config:recommended",
-        ":dependencyDashboard",
-        ":prConcurrentLimitNone",
-        ":prHourlyLimitNone",
-        ":timezone(Europe/Vienna)",
-        ":assignee(Ruhsi)"
+        "github>ruhsi/renovate-config:gepardec.json"
     ],
     separateMultipleMinor: true,
     packageRules: [
@@ -30,9 +26,6 @@ module.exports = {
     ignorePrAuthor: false,
     requireConfig: true,
     optimizeForDisabled: true, // checks for enabled in renovate.json
-    recreateWhen: "always",
-    allowPostUpgradeCommandTemplating: true,
-    allowScripts: true,
     allowedPostUpgradeCommands: [
         "^./quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{newMajor}}.{{newMinor}}$"
     ],

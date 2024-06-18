@@ -30,24 +30,12 @@ jobs:
         run: java -version
 
       - name: Self-hosted Renovate
-        run: |
-          docker run --rm \
-            -e RENOVATE_TOKEN=${{ secrets.RENOVATE_TOKEN }} \
-            -e LOG_LEVEL=debug \
-            -v ${{ github.workspace }}:/mnt/renovate \
-            -v /var/run/docker.sock:/var/run/docker.sock \
-            ghcr.io/ruhsi/gepardec-renovate:latest \
-            renovate
+        uses: renovatebot/github-action@v40.1.12
+        with:
+          token: ${{ secrets.RENOVATE_TOKEN }}
+          configurationFile: renovate-config.js
         env:
-          RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
           LOG_LEVEL: debug
-#      - name: Self-hosted Renovate
-#        uses: renovatebot/github-action@v40.1.12
-#        with:
-#          token: ${{ secrets.RENOVATE_TOKEN }}
-#          configurationFile: renovate-config.js
-#        env:
-#          LOG_LEVEL: debug
 
       - name: Run ls -l
         run: ls -l
