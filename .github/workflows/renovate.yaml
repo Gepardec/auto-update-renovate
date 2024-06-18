@@ -28,8 +28,8 @@ jobs:
             -v ${{ github.workspace }}:/mnt/renovate \
             renovate/renovate \
             /bin/sh -c "
-              apt-get update &&
-              apt-get install -y openjdk-17-jdk maven &&
+              sudo apt-get update &&
+              sudo apt-get install -y openjdk-17-jdk maven &&
               java -version &&
               mvn -v &&
               renovate"
