@@ -5,6 +5,7 @@ module.exports = {
         "Ruhsi/gepardec-default-quarkus"
     ],
     extends: ["config:recommended", ":dependencyDashboard", ":prConcurrentLimitNone", ":prHourlyLimitNone", ":timezone(Europe/Vienna)", ":assignee(Ruhsi)"],
+    separateMultipleMinor: true,
     packageRules: [
         {
             groupName: "quarkus",
