@@ -26,7 +26,7 @@ jobs:
             -e RENOVATE_TOKEN=${{ secrets.RENOVATE_TOKEN }} \
             -e LOG_LEVEL=debug \
             -v ${{ github.workspace }}:/mnt/renovate \
-            renovate/renovate:40.1.12 \
+            renovate/renovate \
             /bin/sh -c "
               apt-get update &&
               apt-get install -y openjdk-17-jdk maven &&
