@@ -6,7 +6,7 @@ module.exports = {
     ],
     extends: [
         "config:recommended",
-        "github>ruhsi/renovate-config:assignee"
+        "github>ruhsi/renovate-config:gepardec.json"
     ],
     separateMultipleMinor: true,
     packageRules: [
