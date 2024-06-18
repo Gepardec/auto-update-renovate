@@ -4,7 +4,14 @@ module.exports = {
     repositories: [
         "Ruhsi/gepardec-default-quarkus"
     ],
-    extends: ["config:recommended", ":dependencyDashboard", ":prConcurrentLimitNone", ":prHourlyLimitNone", ":timezone(Europe/Vienna)", ":assignee(Ruhsi)"],
+    extends: [
+        "config:recommended",
+        ":dependencyDashboard",
+        ":prConcurrentLimitNone",
+        ":prHourlyLimitNone",
+        ":timezone(Europe/Vienna)",
+        ":assignee(Ruhsi)"
+    ],
     separateMultipleMinor: true,
     packageRules: [
         {
@@ -19,13 +26,12 @@ module.exports = {
         fileFilters: ["**/*", "**/.*"],
         executionMode: "branch"
     },
-    repositoryCache: true,
+    repositoryCache: true, // This option decides if Renovate uses a JSON cache to speed up extractions.
     ignorePrAuthor: false,
-    onboarding: false,
     requireConfig: true,
-    optimizeForDisabled: true,
-    allowPostUpgradeCommandTemplating: true,
+    optimizeForDisabled: true, // checks for enabled in renovate.json
     recreateWhen: "always",
+    allowPostUpgradeCommandTemplating: true,
     allowScripts: true,
     allowedPostUpgradeCommands: [
         "^./quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{newMajor}}.{{newMinor}}$"
