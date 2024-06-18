@@ -6,7 +6,7 @@ module.exports = {
     ],
     extends: [
         "config:recommended",
-        "github>ruhsi/renovate-config//assignee(Ruhsi)"
+        "github>ruhsi/renovate-config:assignee"
     ],
     separateMultipleMinor: true,
     packageRules: [
