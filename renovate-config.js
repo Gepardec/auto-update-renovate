@@ -4,7 +4,7 @@ module.exports = {
     repositories: [
         "Ruhsi/gepardec-default-quarkus"
     ],
-    extends: ["config:recommended", ":dependencyDashboard", ":dependencyDashboardApproval", ":prConcurrentLimitNone", ":prHourlyLimitNone", ":semanticCommits", ":timezone(Europe/Vienna)"],
+    extends: ["config:recommended", ":dependencyDashboard", ":prConcurrentLimitNone", ":prHourlyLimitNone", ":semanticCommits", ":timezone(Europe/Vienna)"],
     packageRules: [
         {
             groupName: "quarkus",
