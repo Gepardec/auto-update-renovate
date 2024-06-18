@@ -36,7 +36,7 @@ jobs:
             -e LOG_LEVEL=debug \
             -v ${{ github.workspace }}:/mnt/renovate \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            ghcr.io/Ruhsi/gepardec-renovate:latest \
+            ghcr.io/ruhsi/gepardec-renovate:latest \
             renovate
         env:
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
