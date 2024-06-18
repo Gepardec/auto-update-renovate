@@ -6,6 +6,9 @@ on:
 jobs:
   build-test-push:
     runs-on: ubuntu-latest
+
+    permissions: write-all
+
     steps:
       - uses: actions/checkout@v3
         name: checkout
