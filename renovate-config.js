@@ -15,7 +15,7 @@ module.exports = {
         }
     ],
     postUpgradeTasks: {
-        commands: ["./quarkus-update {{branchName}} {{currentVersion}} {{newVersion}}"],
+        commands: ["./quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{newMajor}}.{{newMinor}}"],
         fileFilters: ["**/*", "**/.*"],
         executionMode: "branch"
     },
