@@ -4,7 +4,7 @@ module.exports = {
     repositories: [
         "Ruhsi/gepardec-default-quarkus"
     ],
-    extends: ["config:recommended", ":dependencyDashboard", ":prConcurrentLimitNone", ":prHourlyLimitNone", ":timezone(Europe/Vienna)", ":assignee(Ruhsi)"],
+    extends: ["config:recommended", ":dependencyDashboard", ":dependencyDashboardApproval", ":prConcurrentLimitNone", ":prHourlyLimitNone", ":timezone(Europe/Vienna)", ":assignee(Ruhsi)"],
     separateMultipleMinor: true,
     packageRules: [
         {
@@ -28,6 +28,6 @@ module.exports = {
     recreateWhen: "always",
     allowScripts: true,
     allowedPostUpgradeCommands: [
-        "^./quarkus-update {{branchName}} {{currentVersion}} {{newVersion}}$"
+        "^./quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{newMajor}}.{{newMinor}}$"
     ],
 };
