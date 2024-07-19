@@ -1,3 +1,4 @@
 #!/bin/bash
 
-ls -l
+touch test.txt
+exit -1
