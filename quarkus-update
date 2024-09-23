@@ -1,4 +1,14 @@
 #!/bin/bash
+set -x
 
-touch test.txt
-exit -1
+branchName=$1
+currentVersion=$2
+newVersion=$3
+
+export REPO_PATH=$4
+
+if [[ "$branchName" =~ renovate/quarkus ]]; then
+  echo $REPO_PATH
+  #./mvnw versions:set-property -Dproperty=quarkus-maven-plugin -DnewVersion=$currentVersion -f /tmp/renovate/repos/$platform/$repository/pom.xml -s /customconfig/settings.xml
+  #./mvnw -f /tmp/renovate/repos/$platform/$repository/pom.xml io.quarkus.platform:quarkus-maven-plugin:$newVersion:update -s /customconfig/settings.xml
+fi

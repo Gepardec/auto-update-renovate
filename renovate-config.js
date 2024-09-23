@@ -9,6 +9,18 @@ module.exports = {
         "github>ruhsi/renovate-config:gepardec(Ruhsi)#1.0.0"
     ],
     separateMultipleMinor: true,
+    branchPrefix: "renovate/",
+    //newMajor and newMinor may not be necessary...
+    allowedPostUpgradeCommands: [
+        "^./quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{env.REPO_PATH}}$" //{{newMajor}}.{{newMinor}}$"
+    ],
+    postUpgradeTasks: {
+        commands: [
+            "./quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{env.REPO_PATH}}" //{{newMajor}}.{{newMinor}}"
+        ],
+        fileFilters: ["**/*", "**/.*"],
+        executionMode: "branch"
+    },
     packageRules: [
         {
             groupName: "quarkus",
@@ -17,16 +29,11 @@ module.exports = {
             ]
         }
     ],
-    postUpgradeTasks: {
-        commands: ["./quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{newMajor}}.{{newMinor}}"],
-        fileFilters: ["**/*", "**/.*"],
-        executionMode: "branch"
-    },
     repositoryCache: true, // This option decides if Renovate uses a JSON cache to speed up extractions.
     ignorePrAuthor: false,
     requireConfig: true,
     optimizeForDisabled: true, // checks for enabled in renovate.json
-    allowedPostUpgradeCommands: [
-        "^./quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{newMajor}}.{{newMinor}}$"
-    ],
+    customEnvVariables: {
+        REPO_PATH: github.workspace
+    }
 };
