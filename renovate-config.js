@@ -12,11 +12,11 @@ module.exports = {
     branchPrefix: "renovate/",
     //newMajor and newMinor may not be necessary...
     allowedPostUpgradeCommands: [
-        "^./quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{env.REPO_PATH}}$" //{{newMajor}}.{{newMinor}}$"
+        "^./quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}} {{env.REPO_PATH}}$" //{{newMajor}}.{{newMinor}}$"
     ],
     postUpgradeTasks: {
         commands: [
-            "./quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{env.REPO_PATH}}" //{{newMajor}}.{{newMinor}}"
+            "./quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}} {{env.REPO_PATH}}" //{{newMajor}}.{{newMinor}}"
         ],
         fileFilters: ["**/*", "**/.*"],
         executionMode: "branch"
@@ -33,7 +33,4 @@ module.exports = {
     ignorePrAuthor: false,
     requireConfig: true,
     optimizeForDisabled: true, // checks for enabled in renovate.json
-    customEnvVariables: {
-        REPO_PATH: github.workspace
-    }
 };
