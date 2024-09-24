@@ -20,14 +20,18 @@ jobs:
         with:
           node-version: '16'
 
-#      - name: Set up Java
-#        uses: actions/setup-java@v4
-#        with:
-#          distribution: 'adopt'
-#          java-version: '17'
-#
-#      - name: Verify Java
-#        run: java -version
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+
+      - name: Set JAVA_HOME
+        run: echo "JAVA_HOME=$(dirname $(dirname $(which java)))" >> $GITHUB_ENV
+
+
+      - name: Verify Java
+        run: java -version
 
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v40.1.12
