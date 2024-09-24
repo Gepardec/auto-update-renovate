@@ -20,14 +20,14 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Set up Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'adopt'
-          java-version: '17'
+      # - name: Set up Java
+      #   uses: actions/setup-java@v4
+      #   with:
+      #     distribution: 'adopt'
+      #     java-version: '17'
 
-      - name: Verify Java
-        run: java -version
+      # - name: Verify Java
+      #   run: java -version
 
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v40.1.12
