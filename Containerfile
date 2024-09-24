@@ -1,5 +1,5 @@
 FROM ghcr.io/renovatebot/renovate:latest
 USER root
 RUN apt update
-RUN apt install -y openjdk-17-jdk
+RUN apt install -y openjdk-17-jre
 USER ubuntu
