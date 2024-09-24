@@ -12,11 +12,11 @@ module.exports = {
     branchPrefix: "renovate/",
     //newMajor and newMinor may not be necessary...
     allowedPostUpgradeCommands: [
-        "^./quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}} {{env.JAVA_HOME}} {{env.JAVA}}$" //{{newMajor}}.{{newMinor}}$"
+        "^./quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}} {{env.JAVA_HOME}}$" //{{newMajor}}.{{newMinor}}$"
     ],
     postUpgradeTasks: {
         commands: [
-            "./quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}} {{env.JAVA_HOME}} {{env.JAVA}}" //{{newMajor}}.{{newMinor}}"
+            "./quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}} {{env.JAVA_HOME}}" //{{newMajor}}.{{newMinor}}"
         ],
         fileFilters: ["**/*", "**/.*"],
         executionMode: "branch"
@@ -34,7 +34,6 @@ module.exports = {
     requireConfig: true,
     optimizeForDisabled: true, // checks for enabled in renovate.json
     customEnvVariables: {
-        JAVA_HOME: process.env.JAVA_HOME,
-        JAVA: "${JAVA_HOME}"
+        JAVA_HOME: process.env.JAVA_HOME
     }
 };

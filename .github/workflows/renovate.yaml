@@ -26,6 +26,9 @@ jobs:
           distribution: 'adopt'
           java-version: '17'
 
+      - name: Set JAVA_HOME explicitly
+        run: echo "JAVA_HOME=${{ env.JAVA_HOME }}" >> $GITHUB_ENV
+
       - name: Verify Java
         run: java -version
 
@@ -36,6 +39,7 @@ jobs:
           configurationFile: renovate-config.js
         env:
           LOG_LEVEL: debug
+          JAVA_HOME: ${{env.JAVA_HOME}}
 
       - name: Run ls -l
         run: ls -l
