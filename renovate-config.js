@@ -12,11 +12,11 @@ module.exports = {
     branchPrefix: "renovate/",
     //newMajor and newMinor may not be necessary...
     allowedPostUpgradeCommands: [
-        "^./quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}}$" //{{newMajor}}.{{newMinor}}$"
+        "^/quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}}$" //{{newMajor}}.{{newMinor}}$"
     ],
     postUpgradeTasks: {
         commands: [
-            "./quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}}" //{{newMajor}}.{{newMinor}}"
+            "/quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}}" //{{newMajor}}.{{newMinor}}"
         ],
         fileFilters: ["**/*", "**/.*"],
         executionMode: "branch"
