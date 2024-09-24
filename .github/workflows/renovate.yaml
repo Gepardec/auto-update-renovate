@@ -26,10 +26,6 @@ jobs:
           distribution: 'adopt'
           java-version: '17'
 
-      - name: Set JAVA_HOME
-        run: echo "JAVA_HOME=$(dirname $(dirname $(which java)))" >> $GITHUB_ENV
-
-
       - name: Verify Java
         run: java -version
 
