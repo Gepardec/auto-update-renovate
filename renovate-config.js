@@ -16,7 +16,7 @@ module.exports = {
     ],
     postUpgradeTasks: {
         commands: [
-            "./quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}}  {{env.JAVA_HOME}}" //{{newMajor}}.{{newMinor}}"
+            "./quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}} {{env.JAVA_HOME}}" //{{newMajor}}.{{newMinor}}"
         ],
         fileFilters: ["**/*", "**/.*"],
         executionMode: "branch"
