@@ -20,24 +20,15 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Set up Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'adopt'
-          java-version: '17'
-
-      - name: Verify Java
-        run: |
-          echo "JAVA_HOME is set to: $JAVA_HOME"
-
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v40.1.12
         with:
+          renovate-image: ghcr.io/ruhsi/gepardec-renovate
+          renovate-version: main-7506234
           token: ${{ secrets.RENOVATE_TOKEN }}
           configurationFile: renovate-config.js
         env:
           LOG_LEVEL: debug
-          JAVA_HOME: $JAVA_HOME
 
       - name: Run ls -l
         run: ls -l
