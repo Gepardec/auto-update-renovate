@@ -30,5 +30,3 @@ jobs:
         env:
           LOG_LEVEL: debug
 
-      - name: Run ls -l
-        run: ls -l
