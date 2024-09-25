@@ -9,7 +9,6 @@ module.exports = {
         "github>ruhsi/renovate-config:gepardec(Ruhsi)#1.0.0"
     ],
     branchPrefix: "renovate/",
-    //newMajor and newMinor may not be necessary...
     allowedPostUpgradeCommands: [
         "^./quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}}$"
     ],
@@ -28,7 +27,7 @@ module.exports = {
             ]
         }
     ],
-    //repositoryCache: true, // This option decides if Renovate uses a JSON cache to speed up extractions.
+    repositoryCache: true, // This option decides if Renovate uses a JSON cache to speed up extractions.
     ignorePrAuthor: false,
     requireConfig: true,
     optimizeForDisabled: true, // checks for enabled in renovate.json
