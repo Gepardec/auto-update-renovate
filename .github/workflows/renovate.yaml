@@ -12,7 +12,7 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/<your-username>/gepardec-renovate:latest
+      image: ghcr.io/${{ github.actor }}/gepardec-renovate:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.6
