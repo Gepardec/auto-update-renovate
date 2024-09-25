@@ -34,6 +34,6 @@ module.exports = {
     requireConfig: true,
     optimizeForDisabled: true, // checks for enabled in renovate.json
     customEnvVariables: {
-        JAVA_HOME: process.env.JAVA_HOME
+        JAVA_HOME: process.env.JAVA_HOME,
     }
 };
