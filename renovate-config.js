@@ -16,7 +16,7 @@ module.exports = {
     ],
     postUpgradeTasks: {
         commands: [
-            "./quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}} {{env.JAVA_HOME}}" //{{newMajor}}.{{newMinor}}"
+            "./quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}}  {{env.JAVA_HOME}}" //{{newMajor}}.{{newMinor}}"
         ],
         fileFilters: ["**/*", "**/.*"],
         executionMode: "branch"
@@ -34,6 +34,6 @@ module.exports = {
     requireConfig: true,
     optimizeForDisabled: true, // checks for enabled in renovate.json
     customEnvVariables: {
-        JAVA_HOME: process.env.JAVA_HOME,
+        JAVA_HOME: "/usr/lib/jvm/java-17-openjdk-amd64"
     }
 };
