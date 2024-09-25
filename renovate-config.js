@@ -34,6 +34,6 @@ module.exports = {
     requireConfig: true,
     optimizeForDisabled: true, // checks for enabled in renovate.json
     customEnvVariables: {
-        JAVA_HOME: "/usr/lib/jvm/java-17-openjdk-amd64"
+        JAVA_HOME: process.env.JAVA_HOME
     }
 };
