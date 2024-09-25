@@ -8,7 +8,6 @@ module.exports = {
         "config:recommended",
         "github>ruhsi/renovate-config:gepardec(Ruhsi)#1.0.0"
     ],
-    separateMultipleMinor: true,
     branchPrefix: "renovate/",
     //newMajor and newMinor may not be necessary...
     allowedPostUpgradeCommands: [
