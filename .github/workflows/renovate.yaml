@@ -37,6 +37,7 @@ jobs:
           configurationFile: renovate-config.js
         env:
           LOG_LEVEL: debug
+          JAVA_HOME: $JAVA_HOME
 
       - name: Run ls -l
         run: ls -l

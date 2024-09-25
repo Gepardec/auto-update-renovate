@@ -29,11 +29,11 @@ module.exports = {
             ]
         }
     ],
-    customEnvVariables: {
-        JAVA_HOME: process.env.JAVA_HOME
-    },
     //repositoryCache: true, // This option decides if Renovate uses a JSON cache to speed up extractions.
     ignorePrAuthor: false,
     requireConfig: true,
     optimizeForDisabled: true, // checks for enabled in renovate.json
+    customEnvVariables: {
+        JAVA_HOME: process.env.JAVA_HOME,
+    }
 };
