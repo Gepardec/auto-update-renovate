@@ -24,7 +24,7 @@ jobs:
         uses: renovatebot/github-action@v40.1.12
         with:
           renovate-image: ghcr.io/ruhsi/gepardec-renovate
-          renovate-version: main-7506234
+          renovate-version: main-834de3e
           token: ${{ secrets.RENOVATE_TOKEN }}
           configurationFile: renovate-config.js
         env:
