@@ -1,0 +1,28 @@
+@startuml
+box A new Hope - success
+participant Entwickler
+
+participant Renovate
+
+Renovate -> OpenRewrite : erkennt neue Version und führt OpenRewrite aus
+activate Renovate
+activate OpenRewrite
+
+OpenRewrite --> Renovate : Ändert Code
+deactivate OpenRewrite
+
+Renovate -> "Git Repository" : pusht Änderungen und erstellt Pull Request
+deactivate Renovate
+activate "Git Repository"
+
+"Git Repository" -> "Build-Pipeline" : git push triggert Build-Pipeline
+activate "Build-Pipeline"
+"Build-Pipeline" --> "Git Repository" : Build erfolgreich
+deactivate "Build-Pipeline"
+
+Entwickler -> "Git Repository" : Entwickler merged Pull Request
+deactivate "Git Repository"
+activate Entwickler
+deactivate Entwickler
+end box
+@enduml

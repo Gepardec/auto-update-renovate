@@ -1,0 +1,46 @@
+@startuml
+box A new Hope - failure
+participant Entwickler
+
+participant Renovate
+
+Renovate -> OpenRewrite : erkennt neue Version und führt OpenRewrite aus
+activate Renovate
+activate OpenRewrite
+
+OpenRewrite --> Renovate : Ändert Code
+deactivate OpenRewrite
+
+Renovate -> "Git Repository" : pusht Änderungen und erstellt Pull Request
+deactivate Renovate
+activate "Git Repository"
+
+"Git Repository" -> "Build-Pipeline" : git push triggert Build-Pipeline
+activate "Build-Pipeline"
+"Build-Pipeline" --> "Dev Space" : Build-Pipeline bricht und erstellt DevSpace
+activate "Dev Space"
+"Build-Pipeline" --> "Git Repository" : erstellt Kommentar im Pull Request mit DevSpace-URL
+deactivate "Build-Pipeline"
+
+"Git Repository" --> Entwickler : wird notifiziert
+activate Entwickler
+Entwickler -> "Dev Space" : öffnet Remote Workspace
+deactivate Entwickler
+
+"Dev Space" --> "Git Repository" : fixt und pusht Änderungen
+
+"Git Repository" -> "Build-Pipeline" : git push triggert Build-Pipeline
+activate "Build-Pipeline"
+"Build-Pipeline" --> "Git Repository" : Build erfolgreich
+deactivate "Build-Pipeline"
+"Git Repository" --> "Dev Space" : löscht DevSpace
+deactivate "Dev Space"
+
+Entwickler -> "Git Repository" : Entwickler merged Pull Request
+activate Entwickler
+deactivate Entwickler
+
+deactivate "Git Repository"
+
+end box
+@enduml
