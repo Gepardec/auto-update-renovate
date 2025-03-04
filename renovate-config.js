@@ -2,11 +2,11 @@ module.exports = {
     gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
     platform: 'github',
     repositories: [
-        "Ruhsi/gepardec-default-quarkus"
+        "ludwigSteindl/gepardec-default-quarkus"
     ],
     extends: [
         "config:recommended",
-        "github>ruhsi/renovate-config:gepardec(Ruhsi)#1.0.0"
+        "github>ludwigSteindl/renovate-config:gepardec(ludwigSteindl)#1.0.0"
     ],
     branchPrefix: "renovate/",
     allowedPostUpgradeCommands: [
