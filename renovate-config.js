@@ -22,8 +22,8 @@ module.exports = {
     packageRules: [
         {
             groupName: "quarkus",
-            matchPackagePrefixes: [
-                "io.quarkus"
+            matchPackageNames: [
+                "io.quarkus{/,}**"
             ]
         }
     ],
