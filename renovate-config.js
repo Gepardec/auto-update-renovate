@@ -9,7 +9,7 @@ module.exports = {
         "github>ludwigsteindl/renovate-config:gepardec(ludwigSteindl)#1.0.0"
     ],
     branchPrefix: "renovate/",
-    allowedPostUpgradeCommands: [
+    allowedCommands: [
         "^./quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}}$"
     ],
     postUpgradeTasks: {
