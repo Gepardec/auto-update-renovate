@@ -10,7 +10,7 @@ jobs:
     permissions: write-all
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         name: checkout
 
       # build the container image and release it as a package in this repository
