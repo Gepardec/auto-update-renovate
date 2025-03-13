@@ -4,29 +4,16 @@ module.exports = {
     repositories: [
         "ludwigsteindl/gepardec-default-quarkus"
     ],
-    extends: [
-        "config:recommended",
-        "github>ludwigsteindl/renovate-config:gepardec(ludwigSteindl)#1.0.0"
-    ],
-    branchPrefix: "renovate/",
-    allowedCommands: [
-        "^./quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}}$"
-    ],
-    postUpgradeTasks: {
-        commands: [
-            "./quarkus-update {{branchName}} {{repository}} {{platform}} {{currentVersion}} {{newVersion}}"
-        ],
-        fileFilters: ["**/*", "**/.*"],
-        executionMode: "branch"
-    },
+    prHourlyLimit: 0,
+    separateMajorMinor: false,
     packageRules: [
         {
+            matchPackageNames: ["io.quarkus{/,}**"],
             groupName: "quarkus",
-            matchPackageNames: [
-                "io.quarkus{/,}**"
-            ]
+            groupSlug: "quarkus_{{currentVersion}}_{{newVersion}}"
         }
     ],
+    recreateWhen: "always"
     // repositoryCache: true, // This option decides if Renovate uses a JSON cache to speed up extractions.
     // ignorePrAuthor: false,
     // requireConfig: true,
