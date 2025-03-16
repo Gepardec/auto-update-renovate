@@ -16,8 +16,8 @@ module.exports = {
         },
         {
             matchDatasources: ["maven"],
-            matchPackageNames: ["log4j"],
-            replacementName: "log4j-core",
+            matchPackageNames: ["org.apache.logging.log4j"],
+            replacementName: "org.apache.logging.log4j-core",
             replacementVersion: "2.0"
         }
     ],
