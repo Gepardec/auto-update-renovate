@@ -13,6 +13,13 @@ module.exports = {
             matchPackageNames: ["io.quarkus{/,}**"],
             groupName: "quarkus",
             groupSlug: "quarkus_{{currentVersion}}_{{newVersion}}"
+        },
+        {
+            matchCurrentVersion: ">=1.2.17",
+            matchDatasources: ["maven"],
+            matchPackageNames: ["log4j"],
+            replacementName: "log4j-core",
+            replacementVersion: "2.0"
         }
     ],
     recreateWhen: "always"
