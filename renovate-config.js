@@ -5,7 +5,7 @@ module.exports = {
         "ludwigsteindl/gepardec-default-quarkus"
     ],
     prHourlyLimit: 0,
-    ignoreDeps: ["write-open-rewrite"],
+    ignoreDeps: ["com.gepardec:write-open-rewrite"],
     separateMajorMinor: false,
     packageRules: [
         {
