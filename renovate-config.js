@@ -2,7 +2,8 @@ module.exports = {
     gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
     platform: 'github',
     repositories: [
-        "ludwigsteindl/gepardec-default-quarkus"
+        "ludwigsteindl/gepardec-default-quarkus",
+        "ludwigsteindl/gepardec-log4j-example"
     ],
     prHourlyLimit: 0,
     ignoreDeps: ["com.gepardec:write-open-rewrite"],
