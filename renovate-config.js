@@ -15,7 +15,6 @@ module.exports = {
             groupSlug: "quarkus_{{currentVersion}}_{{newVersion}}"
         },
         {
-            matchCurrentVersion: ">=1.2.17",
             matchDatasources: ["maven"],
             matchPackageNames: ["log4j"],
             replacementName: "log4j-core",
