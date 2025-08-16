@@ -22,5 +22,6 @@ module.exports = {
             groupSlug: "log4j_{{currentVersion}}_{{newVersion}}"
         }
     ],
-    recreateWhen: "always"
+    recreateWhen: "always",
+    branchPrefix: "renovate"
 };
