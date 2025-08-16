@@ -2,8 +2,8 @@ module.exports = {
     gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
     platform: 'github',
     repositories: [
-        "ludwigsteindl/gepardec-default-quarkus",
-        "ludwigsteindl/gepardec-log4j-example"
+        "Gepardec/auto-update-quarkus-demo",
+        "Gepardec/auto-update-log4j-example"
     ],
     prHourlyLimit: 0,
     ignoreDeps: ["com.gepardec:write-open-rewrite"],
@@ -23,8 +23,4 @@ module.exports = {
         }
     ],
     recreateWhen: "always"
-    // repositoryCache: true, // This option decides if Renovate uses a JSON cache to speed up extractions.
-    // ignorePrAuthor: false,
-    // requireConfig: true,
-    // optimizeForDisabled: true, // checks for enabled in renovate.json
 };
